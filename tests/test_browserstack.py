@@ -16,7 +16,7 @@ BROWSERSTACK_USERNAME = os.getenv("BROWSERSTACK_USERNAME")
 BROWSERSTACK_ACCESS_KEY = os.getenv("BROWSERSTACK_ACCESS_KEY")
 
 def run_browserstack_test(browser_name, os_name, os_version, options_class):
-    print(f"🧪 Starting test: {browser_name} on {os_name} {os_version}")
+    print(f"Starting test: {browser_name} on {os_name} {os_version}")
 
     options = options_class()
     options.set_capability('browserName', browser_name)
@@ -33,7 +33,7 @@ def run_browserstack_test(browser_name, os_name, os_version, options_class):
         titles = scrape_opinion_articles(driver)
         translated = translate_titles(titles)
 
-        print("\n🌐 Translated Titles:")
+        print("\nTranslated Titles:")
         for t in translated:
             print(f"- {t}")
 
