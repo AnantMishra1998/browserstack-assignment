@@ -47,17 +47,16 @@ def run_browserstack_test(browser_name, os_name, os_version, options_class):
         except:
             pass
 
-# Define your 3 desktop + 2 mobile configs
 test_configs = [
     ("Chrome", "Windows", "11", ChromeOptions),
     ("Firefox", "OS X", "Ventura", FirefoxOptions),
     ("Edge", "Windows", "10", EdgeOptions),
-    ("iPhone 13", "iOS", "15", ChromeOptions),  # treated as mobile Chrome
+    ("iPhone 13", "iOS", "15", ChromeOptions), 
     ("Samsung Galaxy S22", "android", "12.0", ChromeOptions),
 ]
 
 if __name__ == "__main__":
-    print("🚀 Starting parallel execution on BrowserStack...")
+    print("Starting parallel execution on BrowserStack...")
 
     threads = []
     for config in test_configs:
@@ -68,4 +67,4 @@ if __name__ == "__main__":
     for t in threads:
         t.join()
 
-    print("✅ All tests completed.")
+    print("All tests completed.")

@@ -10,8 +10,8 @@ def translate_titles(titles):
             url = "https://translate.googleapis.com/translate_a/single"
             params = {
                 "client": "gtx",
-                "sl": "es",   # Source language: Spanish
-                "tl": "en",   # Target language: English
+                "sl": "es",   
+                "tl": "en",   
                 "dt": "t",
                 "q": title
             }
@@ -21,10 +21,10 @@ def translate_titles(titles):
             translated_text = result[0][0][0]
 
             translated.append(translated_text)
-            time.sleep(1)  # polite delay to avoid rate limit
+            time.sleep(1) 
 
         except Exception as e:
-            print(f"⚠️ Translation failed for: {title}\nError: {e}")
+            print(f"Translation failed for: {title}\nError: {e}")
             translated.append("[Translation failed]")
 
     return translated

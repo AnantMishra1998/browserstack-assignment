@@ -6,7 +6,7 @@ def analyze_repeats(translated_titles):
     words = re.findall(r'\b\w+\b', all_words)
     counter = Counter(words)
 
-    print("\n🔁 Repeated Words (more than 2 times):")
+    print("\n Repeated Words (more than 2 times):")
     for word, count in counter.items():
         if count > 2:
             print(f"{word}: {count}")
